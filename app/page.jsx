@@ -1,211 +1,184 @@
-const services = [
-  {
-    title: 'Φωτοβολταϊκά Συστήματα',
-    text: 'Ολοκληρωμένες λύσεις για κατοικίες, επιχειρήσεις, ξενοδοχεία και αγροτικές εγκαταστάσεις.',
-  },
-  {
-    title: 'Net Billing',
-    text: 'Μείωση κόστους ρεύματος μέσω παραγωγής και κατανάλωσης ενέργειας από φωτοβολταϊκά.',
-    more:
-      'Το Net Billing είναι σύστημα ταυτοχρονισμένου ενεργειακού συμψηφισμού. Η ενέργεια που παράγεται καταναλώνεται άμεσα και η πλεονάζουσα ενέργεια διοχετεύεται στο δίκτυο. Με σωστή μελέτη, επιλογή εξοπλισμού και κατάλληλη διαστασιολόγηση, μπορεί να επιτευχθεί σημαντική εξοικονόμηση και ταχύτερη απόσβεση της επένδυσης.',
-  },
-  {
-    title: 'Μπαταρίες & Αυτονομία',
-    text: 'Συστήματα αποθήκευσης ενέργειας για μεγαλύτερη ανεξαρτησία και ασφάλεια.',
-  },
-  {
-    title: 'Ενεργειακές Μελέτες',
-    text: 'Τεχνική μελέτη, υπολογισμός ισχύος, επιλογή εξοπλισμού και υποστήριξη έργου.',
-  },
-];
+export default function HomePage() {
+  const services = [
+    { title: 'Φωτοβολταϊκά Συστήματα', desc: 'Ολοκληρωμένες λύσεις για κατοικίες και επιχειρήσεις με μέγιστη ενεργειακή απόδοση.' },
+    { title: 'Net Billing', desc: 'Μειώστε δραστικά το κόστος ρεύματος μέσω σύγχρονων ενεργειακών λύσεων.', more: 'Το Net Billing είναι σύστημα ενεργειακού συμψηφισμού για φωτοβολταϊκά. Η παραγόμενη ενέργεια καταναλώνεται άμεσα και η περίσσεια διοχετεύεται στο δίκτυο με οικονομικό όφελος. Με σωστή μελέτη, επιλογή εξοπλισμού και κατάλληλη διαστασιολόγηση επιτυγχάνεται σημαντική μείωση λογαριασμών και γρήγορη απόσβεση.' },
+    { title: 'Συστήματα Αποθήκευσης', desc: 'Μπαταρίες τελευταίας τεχνολογίας για αυτονομία και ενεργειακή ασφάλεια.' },
+    { title: 'Ενεργειακές Μελέτες', desc: 'Εξειδικευμένες μελέτες και τεχνική υποστήριξη για κάθε έργο.' }
+  ];
 
-const projects = [
-  'Οικιακό φωτοβολταϊκό σύστημα',
-  'Επαγγελματική εγκατάσταση Net Billing',
-  'Σύστημα με μπαταρίες αποθήκευσης',
-];
+  const projects = [
+    { title: 'Φωτοβολταϊκό έργο κατοικίας', img: '/projects/project1.jpg' },
+    { title: 'Επαγγελματική εγκατάσταση', img: '/projects/project2.jpg' },
+    { title: 'Σύστημα με μπαταρίες', img: '/projects/project3.jpg' }
+  ];
 
-export default function Page() {
   return (
-    <main>
-      <header className="topbar">
-        <div className="container nav">
-          <a className="logo" href="#home">Geo-Energy Solutions</a>
-          <nav className="menu">
+    <div>
+      <header className="navbar">
+        <div className="navbar-inner">
+          <div className="brand">Geo-Energy Solutions</div>
+          <nav className="nav-links">
             <a href="#services">Υπηρεσίες</a>
             <a href="#projects">Έργα</a>
-            <a href="#offer">Προσφορά</a>
+            <a href="#about">Η Εταιρεία</a>
             <a href="#contact">Επικοινωνία</a>
           </nav>
-          <a className="navCta" href="#offer">Ζητήστε Προσφορά</a>
+          <a href="#offer-form" className="btn btn-green">Ζητήστε Προσφορά</a>
         </div>
       </header>
 
-      <section id="home" className="hero">
-        <div className="heroOverlay" />
-        <div className="container heroContent">
-          <p className="eyebrow">Σύγχρονες Ενεργειακές Λύσεις</p>
-          <h1>Επενδύστε στην πράσινη ενέργεια</h1>
-          <p className="heroText">
-            Η Geo-Energy Solutions προσφέρει ολοκληρωμένες λύσεις φωτοβολταϊκών, Net Billing,
-            συστημάτων αποθήκευσης και ενεργειακής αυτονομίας.
-          </p>
-          <div className="heroButtons">
-            <a className="primaryBtn" href="#study">Δωρεάν Μελέτη</a>
-            <a className="secondaryBtn" href="#projects">Δείτε έργα</a>
+      <section className="hero">
+        <div className="container">
+          <span className="badge">Σύγχρονες Ενεργειακές Λύσεις</span>
+          <h1>Επενδύστε στην <span style={{ color: '#4ade80' }}>πράσινη ενέργεια</span></h1>
+          <p>Η Geo-Energy Solutions προσφέρει ολοκληρωμένες λύσεις φωτοβολταϊκών, Net Billing, συστημάτων αποθήκευσης και ενεργειακής αυτονομίας.</p>
+          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 28 }}>
+            <a href="#contact-form" className="btn btn-green">Δωρεάν Μελέτη</a>
+            <a href="#projects" className="btn btn-outline">Δείτε τα έργα μας</a>
           </div>
         </div>
       </section>
 
       <section className="stats">
-        <div className="container statsGrid">
-          <div><strong>15+</strong><span>Χρόνια εμπειρίας</span></div>
-          <div><strong>500+</strong><span>Έργα & εφαρμογές</span></div>
-          <div><strong>98%</strong><span>Ικανοποίηση πελατών</span></div>
-          <div><strong>24/7</strong><span>Υποστήριξη</span></div>
+        <div className="container stats-grid">
+          <div><div className="stat-number">15+</div><div>Χρόνια Εμπειρίας</div></div>
+          <div><div className="stat-number">500+</div><div>Ολοκληρωμένα Έργα</div></div>
+          <div><div className="stat-number">98%</div><div>Ικανοποίηση Πελατών</div></div>
+          <div><div className="stat-number">24/7</div><div>Τεχνική Υποστήριξη</div></div>
         </div>
       </section>
 
-      <section className="section about">
-        <div className="container twoCols">
-          <div className="imageCard" />
+      <section id="about" className="section bg-gray">
+        <div className="container grid-2">
+          <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?q=80&w=1200&auto=format&fit=crop" alt="Φωτοβολταϊκό πάρκο" className="image-rounded" />
           <div>
-            <p className="sectionLabel">Η εταιρεία</p>
+            <div className="text-green" style={{ fontWeight: 800, letterSpacing: 2 }}>Η ΕΤΑΙΡΕΙΑ</div>
             <h2>Εξειδίκευση στην καθαρή ενέργεια</h2>
-            <p>
-              Αναλαμβάνουμε τη μελέτη, την εγκατάσταση και την τεχνική υποστήριξη
-              φωτοβολταϊκών συστημάτων με επαγγελματισμό, αξιοπιστία και έμφαση στη σωστή απόδοση της επένδυσης.
-            </p>
-            <div className="miniCards">
-              <div><strong>100%</strong><span>Πιστοποιημένος εξοπλισμός</span></div>
-              <div><strong>ISO</strong><span>Πρότυπα ποιότητας</span></div>
-            </div>
+            <p>Παρέχουμε ολοκληρωμένες λύσεις φωτοβολταϊκών με στόχο τη μέγιστη εξοικονόμηση ενέργειας και τη βιώσιμη ανάπτυξη. Αναλαμβάνουμε μελέτη, εγκατάσταση και συντήρηση με επαγγελματισμό και αξιοπιστία.</p>
           </div>
         </div>
       </section>
 
       <section id="services" className="section">
         <div className="container">
-          <p className="sectionLabel">Υπηρεσίες</p>
-          <h2>Ολοκληρωμένες λύσεις ενέργειας</h2>
-          <div className="cards">
+          <div style={{ maxWidth: 760, marginBottom: 42 }}>
+            <div className="text-green" style={{ fontWeight: 800, letterSpacing: 2 }}>ΥΠΗΡΕΣΙΕΣ</div>
+            <h2>Ολοκληρωμένες λύσεις ενέργειας</h2>
+            <p>Υπηρεσίες φωτοβολταϊκών και ενεργειακών λύσεων με στόχο την ενεργειακή αυτονομία, τη μείωση κόστους ρεύματος και τη μέγιστη απόδοση επένδυσης.</p>
+          </div>
+          <div className="grid-4">
             {services.map((service) => (
-              <article className="card" key={service.title}>
-                <div className="icon" />
+              <div className="service-card" key={service.title}>
                 <h3>{service.title}</h3>
-                <p>{service.text}</p>
-                {service.more && (
+                <p>{service.desc}</p>
+                {service.more ? (
                   <details>
-                    <summary>Περισσότερα...</summary>
+                    <summary style={{ cursor: 'pointer', fontWeight: 800, color: '#15803d' }}>Περισσότερα...</summary>
                     <p>{service.more}</p>
                   </details>
-                )}
-              </article>
+                ) : null}
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="projects" className="section projects">
+      <section id="projects" className="section bg-gray">
         <div className="container">
-          <p className="sectionLabel">Έργα</p>
-          <h2>Πρόσφατες εγκαταστάσεις</h2>
-          <div className="projectGrid">
+          <div style={{ display: 'flex', justifyContent: 'space-between', gap: 20, alignItems: 'end', marginBottom: 38, flexWrap: 'wrap' }}>
+            <div><div className="text-green" style={{ fontWeight: 800, letterSpacing: 2 }}>ΕΡΓΑ</div><h2>Πρόσφατες εγκαταστάσεις</h2></div>
+            <a href="#offer-form" className="btn btn-green">Ζητήστε προσφορά</a>
+          </div>
+          <div className="grid-3">
             {projects.map((project, index) => (
-              <article className="project" key={project}>
-                <div className={`projectImg img${index + 1}`} />
-                <div className="projectBody">
-                  <p>Φωτοβολταϊκό έργο</p>
-                  <h3>{project}</h3>
-                  <span>Σχεδιασμός με έμφαση στην απόδοση, την αξιοπιστία και την εξοικονόμηση.</span>
+              <div className="card project-card" key={project.title}>
+                <img src={project.img} alt={project.title} className="project-img" onError={(e) => { e.currentTarget.src = `https://picsum.photos/600/40${index}`; }} />
+                <div className="project-content">
+                  <div className="text-green" style={{ fontWeight: 800, fontSize: 14 }}>Φωτοβολταϊκό Έργο</div>
+                  <h3>{project.title}</h3>
+                  <p>Σύγχρονη εγκατάσταση με έμφαση στην απόδοση, την αξιοπιστία και την εξοικονόμηση ενέργειας.</p>
                 </div>
-              </article>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="cta">
-        <div className="container">
+      <section className="section cta">
+        <div className="container" style={{ maxWidth: 880 }}>
           <h2>Ξεκινήστε σήμερα τη μετάβαση στην πράσινη ενέργεια</h2>
-          <p>Στείλτε μας τα στοιχεία σας και θα επικοινωνήσουμε μαζί σας για τεχνική μελέτη ή προσφορά.</p>
-          <a className="whiteBtn" href="#offer">Ζητήστε Προσφορά</a>
+          <p>Επικοινωνήστε μαζί μας για δωρεάν τεχνική μελέτη και εξατομικευμένη προσφορά.</p>
+          <a href="#offer-form" className="btn" style={{ background: 'white', color: '#15803d', marginTop: 20 }}>Ζητήστε Προσφορά</a>
         </div>
       </section>
 
-      <section id="offer" className="section formSection">
-        <div className="container formWrap">
-          <p className="sectionLabel">Ζητήστε Προσφορά</p>
-          <h2>Λάβετε εξατομικευμένη προσφορά</h2>
+      <section id="offer-form" className="section bg-gray">
+        <div className="container" style={{ maxWidth: 850 }}>
+          <h2 style={{ textAlign: 'center' }}>Ζητήστε Προσφορά</h2>
           <form action="https://formsubmit.co/geoenergysol@gmail.com" method="POST" className="form">
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_subject" value="Νέα προσφορά από Geo-Energy Solutions" />
-            <div className="formGrid">
-              <input name="name" required placeholder="Ονοματεπώνυμο" />
-              <input name="phone" required placeholder="Τηλέφωνο" />
+            <div className="form-row">
+              <div><label>Ονοματεπώνυμο</label><input name="name" required placeholder="Το όνομά σας" /></div>
+              <div><label>Τηλέφωνο</label><input name="phone" required placeholder="Το τηλέφωνό σας" /></div>
             </div>
-            <input type="email" name="email" required placeholder="Email" />
-            <input type="number" name="kw" placeholder="Πόσα kW σύστημα θέλετε; π.χ. 10" />
-            <div className="radioBox">
-              <span>Θέλετε μπαταρίες;</span>
-              <label><input type="radio" name="battery" value="Ναι" /> Ναι</label>
-              <label><input type="radio" name="battery" value="Όχι" /> Όχι</label>
-            </div>
-            <textarea name="message" rows={6} placeholder="Περιγράψτε το έργο ή τις ανάγκες σας" />
-            <button type="submit">Αποστολή Προσφοράς</button>
+            <div style={{ marginTop: 18 }}><label>Email</label><input type="email" name="email" required placeholder="Το email σας" /></div>
+            <div style={{ marginTop: 18 }}><label>Πόσα kW σύστημα θέλετε;</label><input type="number" name="kw" placeholder="π.χ. 10" /></div>
+            <div style={{ marginTop: 18 }}><label>Θέλετε μπαταρίες;</label><div className="radio-row"><span><input type="radio" name="battery" value="Ναι" /> Ναι</span><span><input type="radio" name="battery" value="Όχι" /> Όχι</span></div></div>
+            <div style={{ marginTop: 18 }}><label>Περιγραφή έργου</label><textarea name="message" rows={6} placeholder="Περιγράψτε το έργο ή τις ανάγκες σας" /></div>
+            <button className="btn btn-green" style={{ width: '100%', marginTop: 20 }} type="submit">Αποστολή Προσφοράς</button>
           </form>
         </div>
       </section>
 
-      <section id="study" className="section studySection">
-        <div className="container formWrap">
-          <p className="sectionLabel">Δωρεάν Μελέτη</p>
-          <h2>Στείλτε το αίτημά σας</h2>
-          <form action="https://formsubmit.co/geoenergysol@gmail.com" method="POST" className="form light">
+      <section id="contact-form" className="section">
+        <div className="container" style={{ maxWidth: 850 }}>
+          <h2 style={{ textAlign: 'center' }}>Δωρεάν Μελέτη</h2>
+          <form action="https://formsubmit.co/geoenergysol@gmail.com" method="POST" className="form">
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_subject" value="Νέο αίτημα δωρεάν μελέτης από Geo-Energy Solutions" />
-            <div className="formGrid">
-              <input name="name" required placeholder="Ονοματεπώνυμο" />
-              <input name="phone" required placeholder="Τηλέφωνο" />
+            <input type="hidden" name="_subject" value="Νέο αίτημα από Geo-Energy Solutions" />
+            <div className="form-row">
+              <div><label>Ονοματεπώνυμο</label><input name="name" required placeholder="Το όνομά σας" /></div>
+              <div><label>Τηλέφωνο</label><input name="phone" required placeholder="Το τηλέφωνό σας" /></div>
             </div>
-            <input type="email" name="email" required placeholder="Email" />
-            <textarea name="message" rows={6} required placeholder="Τι χρειάζεστε;" />
-            <button type="submit">Αποστολή Αιτήματος</button>
+            <div style={{ marginTop: 18 }}><label>Email</label><input type="email" name="email" required placeholder="Το email σας" /></div>
+            <div style={{ marginTop: 18 }}><label>Τι χρειάζεστε;</label><textarea name="message" rows={6} required placeholder="Περιγράψτε το έργο ή την υπηρεσία που σας ενδιαφέρει" /></div>
+            <button className="btn btn-green" style={{ width: '100%', marginTop: 20 }} type="submit">Αποστολή Αιτήματος</button>
           </form>
         </div>
       </section>
 
       <footer id="contact" className="footer">
-        <div className="container footerGrid">
+        <div className="container footer-grid">
           <div>
-            <h3>Geo-Energy Solutions</h3>
+            <div className="footer-brand" style={{ fontSize: 28, fontWeight: 900 }}>Geo-Energy Solutions</div>
             <p>Σύγχρονες ενεργειακές λύσεις με αξιοπιστία, τεχνογνωσία και υψηλή ποιότητα υπηρεσιών.</p>
           </div>
           <div>
-            <h4>Υπηρεσίες</h4>
-            <p>Φωτοβολταϊκά</p>
-            <p>Net Billing</p>
-            <p>Μπαταρίες</p>
-            <p>Συντήρηση</p>
+            <h3>Υπηρεσίες</h3>
+            <ul><li>Φωτοβολταϊκά</li><li>Net Billing</li><li>Μπαταρίες</li><li>Συντήρηση</li></ul>
           </div>
           <div>
-            <h4>Επικοινωνία</h4>
-            <p>Υπεύθυνος Επικοινωνίας:</p>
-            <p><strong>Γεώργιος Γιαννακόπουλος</strong></p>
-            <p>Διπλωματούχος Ηλεκτρολόγος Μηχανικός, MSc</p>
-            <p>geoenergysol@gmail.com</p>
-            <p>+30 6944450594</p>
-            <p>Καλαμάτα, Μαιζώνος 88, Ελλάδα</p>
+            <h3>Επικοινωνία</h3>
+            <ul><li>Υπεύθυνος Επικοινωνίας:</li><li><strong style={{ color: 'white' }}>Γεώργιος Γιαννακόπουλος</strong></li><li>Διπλωματούχος Ηλεκτρολόγος Μηχανικός, MSc</li><li>geoenergysol@gmail.com</li><li>+30 6944450594</li><li>Καλαμάτα, Μαιζώνος 88, Ελλάδα</li></ul>
+            <iframe title="Χάρτης Geo-Energy Solutions" src="https://www.google.com/maps?q=Kalamata%20Maizonos%2088&output=embed" className="map" loading="lazy" />
+          </div>
+          <div>
+            <h3>Newsletter</h3>
+            <form action="https://formsubmit.co/geoenergysol@gmail.com" method="POST" className="newsletter">
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_subject" value="Νέα εγγραφή newsletter" />
+              <input type="email" name="email" placeholder="Το email σας" required />
+              <button className="btn btn-green" style={{ width: '100%', marginTop: 12 }} type="submit">Εγγραφή</button>
+            </form>
           </div>
         </div>
-        <div className="copyright">© 2026 Geo-Energy Solutions. All rights reserved.</div>
+        <div className="container footer-bottom">© 2026 Geo-Energy Solutions. All rights reserved.</div>
       </footer>
 
-      <a className="whatsapp" href="https://wa.me/306944450594" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-        💬
-      </a>
-    </main>
+      <a href="https://wa.me/306944450594" target="_blank" rel="noopener noreferrer" className="whatsapp" aria-label="WhatsApp">💬</a>
+    </div>
   );
 }
