@@ -1,26 +1,7 @@
-# Geo-Energy Solutions
+Geo-Energy Solutions - final clean Next.js project.
 
-Έτοιμο Next.js project χωρίς TypeScript, Tailwind ή PostCSS για να μην δημιουργεί build errors στο Vercel.
+Upload all files/folders to GitHub repo, then redeploy in Vercel.
+No TypeScript, no Tailwind, no PostCSS.
 
-## Upload στο GitHub
-Ανεβάζεις όλα τα περιεχόμενα του φακέλου στο repo και κάνεις Commit changes.
-
-## Vercel
-Vercel → Deployments → Redeploy.
-
-## Google Analytics
-Στο Vercel πρόσθεσε Environment Variable:
+For Google Analytics: in Vercel Project Settings > Environment Variables add:
 NEXT_PUBLIC_GA_ID = G-XXXXXXXXXX
-
-## Πραγματικές φωτογραφίες έργων
-Βάλε τις φωτογραφίες σου στον φάκελο public/projects με ονόματα:
-project1.jpg
-project2.jpg
-project3.jpg
-
-## Search Console
-Υπέβαλε το sitemap:
-https://το-domain-σου/sitemap.xml
-
-## Domain
-Όταν βάλεις δικό σου domain, άλλαξε τα URLs στο public/robots.txt και public/sitemap.xml.
