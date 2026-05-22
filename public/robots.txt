@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://geo-energy-solutions.vercel.app/sitemap.xml
